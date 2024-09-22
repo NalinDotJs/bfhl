@@ -14,7 +14,7 @@ const InputForm = () => {
 
         try {
             const jsonData = JSON.parse(input);
-            const res = await axios.post('http://localhost:5000/bfhl', jsonData);
+            const res = await axios.post('https://bfhl-backend-wmdt.onrender.com/bfhl', jsonData);
             console.log(res.data); // Log the response data
             setResponse(res.data);
         } catch (err) {
