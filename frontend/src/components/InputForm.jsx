@@ -18,16 +18,8 @@ const InputForm = () => {
             console.log(res.data); // Log the response data
             setResponse(res.data);
         } catch (err) {
-            if (err.response) {
-                console.error('Response data:', err.response.data); 
-                setError(err.response.data); 
-            } else if (err.request) {
-                console.error('Request error:', err.request); // Log request error
-                setError('Network error, please try again.');
-            } else {
-                console.error('Error message:', err.message); // Log any other error message
-                setError('An unexpected error occurred.');
-            }
+            console.error(err); // Log the error for debugging
+            setError('Invalid JSON input or network error');
         }
     };
 
@@ -95,6 +87,71 @@ const InputForm = () => {
     );
 };
 
-// Styles here...
+const styles = {
+    container: {
+        padding: '20px',
+        maxWidth: '500px',
+        margin: '0 auto',
+    },
+    textarea: {
+        width: '100%',
+        height: '100px',
+        padding: '10px',
+        fontSize: '14px',
+        borderRadius: '4px',
+        border: '1px solid #ccc',
+        marginBottom: '10px',
+    },
+    errorTextarea: {
+        border: '1px solid red',
+    },
+    button: {
+        padding: '10px 20px',
+        backgroundColor: '#007BFF',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+    },
+    error: {
+        color: 'red',
+        marginTop: '10px',
+    },
+    multiFilter: {
+        marginTop: '20px',
+    },
+    select: {
+        padding: '10px',
+        fontSize: '14px',
+        borderRadius: '4px',
+        border: '1px solid #ccc',
+        marginBottom: '10px',
+    },
+    selectedFilters: {
+        display: 'flex',
+        gap: '10px',
+        flexWrap: 'wrap',
+        marginTop: '10px',
+    },
+    filter: {
+        backgroundColor: '#e0e0e0',
+        padding: '5px 10px',
+        borderRadius: '20px',
+        display: 'flex',
+        alignItems: 'center',
+    },
+    removeButton: {
+        background: 'none',
+        border: 'none',
+        marginLeft: '5px',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        color: 'red',
+    },
+    response: {
+        marginTop: '20px',
+        fontWeight: 'bold',
+    }
+};
 
 export default InputForm;
