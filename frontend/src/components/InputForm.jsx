@@ -58,6 +58,7 @@ const InputForm = () => {
 
     return (
         <div style={styles.container}>
+            <h2>Debug: InputForm is rendering!</h2>
             <form onSubmit={handleSubmit}>
                 <textarea
                     style={error ? { ...styles.textarea, ...styles.errorTextarea } : styles.textarea}
