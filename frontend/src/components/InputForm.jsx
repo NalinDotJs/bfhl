@@ -6,7 +6,7 @@ const InputForm = () => {
     const [response, setResponse] = useState(null);
     const [error, setError] = useState('');
     const [selectedFilters, setSelectedFilters] = useState([]);
-    const [debugMode, setDebugMode] = useState(true); // Debug mode state
+    const [debugMode, setDebugMode] = useState(false); // Debug mode state
 
     const handleSubmit = async (e) => {
         e.preventDefault();
