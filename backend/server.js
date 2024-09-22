@@ -6,7 +6,7 @@ const bfhlRoutes = require('./routes/bfhlRoutes');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({ // Add this line
-  origin: 'http://localhost:5173', // Allow requests from frontend at port 5173
+  origin: 'https://bfhl-frontend-0w5e.onrender.com', // Allow requests from frontend at port 5173
   credentials: true
 }));
 
